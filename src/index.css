@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 200 20% 98%;
+    --foreground: 210 40% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 210 40% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 40% 15%;
+    --primary: 173 58% 39%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 199 89% 96%;
+    --secondary-foreground: 210 40% 25%;
+    --muted: 200 20% 94%;
+    --muted-foreground: 210 20% 45%;
+    --accent: 199 89% 92%;
+    --accent-foreground: 173 58% 30%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 200 20% 88%;
+    --input: 200 20% 88%;
+    --ring: 173 58% 39%;
+    --radius: 0.75rem;
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 10%;
+    --danger: 0 84% 60%;
+    --danger-foreground: 0 0% 100%;
+    --info: 199 89% 48%;
+    --info-foreground: 0 0% 100%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 210 40% 25%;
+    --sidebar-primary: 173 58% 39%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 199 89% 96%;
+    --sidebar-accent-foreground: 173 58% 30%;
+    --sidebar-border: 200 20% 92%;
+    --sidebar-ring: 173 58% 39%;
+  }
+  .dark {
+    --background: 210 40% 10%;
+    --foreground: 200 20% 95%;
+    --card: 210 40% 12%;
+    --card-foreground: 200 20% 95%;
+    --popover: 210 40% 12%;
+    --popover-foreground: 200 20% 95%;
+    --primary: 173 58% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 18%;
+    --secondary-foreground: 200 20% 90%;
+    --muted: 210 40% 18%;
+    --muted-foreground: 200 20% 60%;
+    --accent: 210 40% 20%;
+    --accent-foreground: 173 58% 50%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 210 40% 20%;
+    --input: 210 40% 20%;
+    --ring: 173 58% 45%;
+    --sidebar-background: 210 40% 12%;
+    --sidebar-foreground: 200 20% 90%;
+    --sidebar-primary: 173 58% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 40% 18%;
+    --sidebar-accent-foreground: 173 58% 50%;
+    --sidebar-border: 210 40% 20%;
+    --sidebar-ring: 173 58% 45%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body { @apply bg-background text-foreground antialiased; }
+}
+
+@layer utilities {
+  .healthcare-card { @apply bg-card rounded-xl border border-border shadow-sm hover:shadow-md transition-all duration-300; }
+  .healthcare-card-elevated { @apply bg-card rounded-xl border border-border shadow-lg hover:shadow-xl transition-all duration-300; }
+  .role-badge { @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium; }
+  .role-badge-doctor { @apply bg-primary/10 text-primary; }
+  .role-badge-nurse { @apply bg-purple-500/10 text-purple-500; }
+  .role-badge-pharmacist { @apply bg-orange-500/10 text-orange-500; }
+  .role-badge-receptionist { @apply bg-blue-500/10 text-blue-500; }
+  .role-badge-admin { @apply bg-gray-500/10 text-gray-500; }
+  .status-safe { @apply bg-green-500/10 text-green-600 border border-green-500/20; }
+  .status-caution { @apply bg-yellow-500/10 text-yellow-600 border border-yellow-500/20; }
+  .status-risk { @apply bg-red-500/10 text-red-600 border border-red-500/20; }
+  .workflow-step { @apply flex items-center gap-3 p-3 rounded-lg transition-all duration-200; }
+  .workflow-step-active { @apply bg-primary/10 border-l-4 border-primary; }
+  .workflow-step-completed { @apply bg-green-500/5 border-l-4 border-green-500; }
+  .workflow-step-pending { @apply bg-muted/50 border-l-4 border-muted-foreground/20; }
+  .fade-in { animation: fadeIn 0.3s ease-out; }
+  .scale-in { animation: scaleIn 0.2s ease-out; }
+  .slide-in-up { animation: slideInUp 0.3s ease-out; }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes scaleIn { from { transform: scale(0.95); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+  @keyframes slideInUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+}
