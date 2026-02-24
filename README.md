@@ -1,73 +1,70 @@
-# Welcome to your Lovable project
+# HealthFlow AI – Frontend
 
-## Project info
+## Overview
+This repository contains the frontend interface for **HealthFlow AI**, a structured, role-based clinical workflow system integrating MedGemma within a human-supervised hospital environment.
+The frontend provides clear role separation and controlled AI interaction across:
+- Receptionist
+- Doctor
+- Nurse
+- Pharmacist
+- Administrator
+The interface is designed to support structured coordination, reduce communication gaps, and enable safe AI-assisted explanation generation.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## System Workflow
+Receptionist → Doctor → AI Explanation → Doctor Approval → Nurse → Pharmacist → Admin Analytics
+The frontend visually enforces this structured workflow, ensuring each role operates within defined boundaries.
 
-## How can I edit this code?
+## Role-Based Interfaces
+### Receptionist
+- Patient registration
+- Case initiation
+- Digital record creation
+### Doctor
+- Structured clinical note entry
+- Prescription documentation
+- Test and bed allocation recording
+- Trigger AI explanation generation
+- Review and approve AI output
+### Nurse
+- Bed allocation management
+- Diagnostic test coordination
+- Workflow progression updates
+### Pharmacist
+- Prescription review
+- Medicine dispensing
+- Display of doctor-approved explanation
+### Administrator
+- Consultation metrics monitoring
+- AI usage statistics
+- Approval rate tracking
+- Operational workflow analytics
+## AI Interaction Model
+The frontend connects to the FastAPI backend to:
+1. Submit structured clinical notes
+2. Trigger MedGemma explanation generation
+3. Display AI-generated output
+4. Enforce mandatory doctor approval before patient visibility
+This ensures responsible AI integration within a controlled healthcare workflow.
 
-There are several ways of editing your application.
+## Design Principles
+The frontend was built with the following priorities:
+- Clear role separation
+- Minimal cognitive overload
+- Structured workflow visualization
+- Transparent AI assistance
+- Administrative oversight capability
 
-**Use Lovable**
+## Running Locally
+If using a Node-based environment:
+npm install  
+npm start  
+If static frontend:
+Open index.html in a browser or run a simple local development server.
+## Repository Structure
+All frontend files are placed directly in the root of this repository.
+There is no separate `frontend/` subfolder.
+This flat structure was intentionally used for clarity and submission simplicity.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## Deployment
+The frontend is designed to connect to a FastAPI backend instance.
+The architecture supports scalable deployment in conjunction with GPU-backed inference environments.
